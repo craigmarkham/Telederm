@@ -6,7 +6,7 @@
 4.	Create Areas in MVC - complete
 	a.	Common - complete
 	b.	User - complete
-	c.	Admin
+	c.	Admin - 
 	d.	Security
 5.	Create All Controllers in Respective Areas - in progress
 6.	Add Default index views - 
