@@ -1,0 +1,116 @@
+﻿@model BOL.Telederm_Consult
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Update",  "Consult", FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Telederm_Consult</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConsultSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConsultSID)
+            @Html.ValidationMessageFor(model => model.ConsultSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PatientSID)
+            @Html.ValidationMessageFor(model => model.PatientSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RequestingProviderSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RequestingProviderSID)
+            @Html.ValidationMessageFor(model => model.RequestingProviderSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReadingProviderSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReadingProviderSID)
+            @Html.ValidationMessageFor(model => model.ReadingProviderSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImagerSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImagerSID)
+            @Html.ValidationMessageFor(model => model.ImagerSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderingInstitutionSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderingInstitutionSID)
+            @Html.ValidationMessageFor(model => model.OrderingInstitutionSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RequestServiceSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RequestServiceSID)
+            @Html.ValidationMessageFor(model => model.RequestServiceSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RequestDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RequestDate)
+            @Html.ValidationMessageFor(model => model.RequestDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompletionDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompletionDate)
+            @Html.ValidationMessageFor(model => model.CompletionDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RemoteConsultSID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RemoteConsultSID)
+            @Html.ValidationMessageFor(model => model.RemoteConsultSID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageComments)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageComments)
+            @Html.ValidationMessageFor(model => model.ImageComments)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

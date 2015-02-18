@@ -1,0 +1,1359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VDWWorkModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="VDWWorkModelStoreContainer">
+          <EntitySet Name="Telederm_Condition" EntityType="VDWWorkModel.Store.Telederm_Condition" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_Consult" EntityType="VDWWorkModel.Store.Telederm_Consult" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_ConsultXCondition" EntityType="VDWWorkModel.Store.Telederm_ConsultXCondition" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_DifferentialDiagnosis" EntityType="VDWWorkModel.Store.Telederm_DifferentialDiagnosis" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_PathologyReport" EntityType="VDWWorkModel.Store.Telederm_PathologyReport" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_PathologyReportRaw" EntityType="VDWWorkModel.Store.Telederm_PathologyReportRaw" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_Patient" EntityType="VDWWorkModel.Store.Telederm_Patient" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_PatientAddress" EntityType="VDWWorkModel.Store.Telederm_PatientAddress" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Telederm_TreatmentRequest" EntityType="VDWWorkModel.Store.Telederm_TreatmentRequest" store:Type="Tables" Schema="V20Report" />
+          <EntitySet Name="Consult" EntityType="VDWWorkModel.Store.Consult" store:Type="Views" store:Schema="Con" store:Name="Consult">
+            <DefiningQuery>SELECT 
+      [Consult].[ConsultSID] AS [ConsultSID], 
+      [Consult].[ConsultIEN] AS [ConsultIEN], 
+      [Consult].[Sta3n] AS [Sta3n], 
+      [Consult].[PatientSID] AS [PatientSID], 
+      [Consult].[PatientLocationSID] AS [PatientLocationSID], 
+      [Consult].[ProtocolSID] AS [ProtocolSID], 
+      [Consult].[GMRCProcedureSID] AS [GMRCProcedureSID], 
+      [Consult].[GMRCProcedure] AS [GMRCProcedure], 
+      [Consult].[ClinicalProcedureSID] AS [ClinicalProcedureSID], 
+      [Consult].[ToRequestServiceSID] AS [ToRequestServiceSID], 
+      [Consult].[ToRequestServiceName] AS [ToRequestServiceName], 
+      [Consult].[RequestDateTime] AS [RequestDateTime], 
+      [Consult].[RequestVistaErrorDate] AS [RequestVistaErrorDate], 
+      [Consult].[RequestDateTimeTransformSID] AS [RequestDateTimeTransformSID], 
+      [Consult].[RequestDateSID] AS [RequestDateSID], 
+      [Consult].[FileEntryDateTime] AS [FileEntryDateTime], 
+      [Consult].[FileEntryVistaErrorDate] AS [FileEntryVistaErrorDate], 
+      [Consult].[FileEntryDateTimeTransformSID] AS [FileEntryDateTimeTransformSID], 
+      [Consult].[FromLocationSID] AS [FromLocationSID], 
+      [Consult].[RequestType] AS [RequestType], 
+      [Consult].[ToStaffSID] AS [ToStaffSID], 
+      [Consult].[OrderStatusSID] AS [OrderStatusSID], 
+      [Consult].[CPRSOrderSID] AS [CPRSOrderSID], 
+      [Consult].[CPRSStatus] AS [CPRSStatus], 
+      [Consult].[RecentActivityTypeSID] AS [RecentActivityTypeSID], 
+      [Consult].[RecentActivityType] AS [RecentActivityType], 
+      [Consult].[SendingStaffSID] AS [SendingStaffSID], 
+      [Consult].[SignificantFindings] AS [SignificantFindings], 
+      [Consult].[UrgencyProtocolSID] AS [UrgencyProtocolSID], 
+      [Consult].[Urgency] AS [Urgency], 
+      [Consult].[ConsultPlaceProtocolSID] AS [ConsultPlaceProtocolSID], 
+      [Consult].[PlaceOfConsultation] AS [PlaceOfConsultation], 
+      [Consult].[DisplayTextOfItemOrdered] AS [DisplayTextOfItemOrdered], 
+      [Consult].[OrderingInstitutionSID] AS [OrderingInstitutionSID], 
+      [Consult].[OrderingSta3n] AS [OrderingSta3n], 
+      [Consult].[InpatOutpat] AS [InpatOutpat], 
+      [Consult].[ProvisionalDiagnosis] AS [ProvisionalDiagnosis], 
+      [Consult].[ProvisionalDiagnosisCode] AS [ProvisionalDiagnosisCode], 
+      [Consult].[RemoteRole] AS [RemoteRole], 
+      [Consult].[RemoteService] AS [RemoteService], 
+      [Consult].[RemoteConsultInstitutionSID] AS [RemoteConsultInstitutionSID], 
+      [Consult].[RemoteConsultSta3n] AS [RemoteConsultSta3n], 
+      [Consult].[RemoteConsultSID] AS [RemoteConsultSID], 
+      [Consult].[TIUDocumentSID] AS [TIUDocumentSID], 
+      [Consult].[EarliestDate] AS [EarliestDate], 
+      [Consult].[EarliestVistaErrorDate] AS [EarliestVistaErrorDate], 
+      [Consult].[EarliestDateTransformSID] AS [EarliestDateTransformSID]
+      FROM [Con].[Consult] AS [Consult]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SPatient" EntityType="VDWWorkModel.Store.SPatient" store:Type="Views" store:Schema="SPatient" store:Name="SPatient">
+            <DefiningQuery>SELECT 
+      [SPatient].[PatientSID] AS [PatientSID], 
+      [SPatient].[PatientIEN] AS [PatientIEN], 
+      [SPatient].[Sta3n] AS [Sta3n], 
+      [SPatient].[PatientName] AS [PatientName], 
+      [SPatient].[PatientLastName] AS [PatientLastName], 
+      [SPatient].[PatientFirstName] AS [PatientFirstName], 
+      [SPatient].[PatientSSN] AS [PatientSSN], 
+      [SPatient].[ScrSSN] AS [ScrSSN], 
+      [SPatient].[StreetAddress1] AS [StreetAddress1], 
+      [SPatient].[StreetAddress2] AS [StreetAddress2], 
+      [SPatient].[StreetAddress3] AS [StreetAddress3], 
+      [SPatient].[City] AS [City], 
+      [SPatient].[Zip] AS [Zip], 
+      [SPatient].[Zip4] AS [Zip4], 
+      [SPatient].[PostalCode] AS [PostalCode], 
+      [SPatient].[Province] AS [Province], 
+      [SPatient].[CountrySID] AS [CountrySID], 
+      [SPatient].[Country] AS [Country], 
+      [SPatient].[PhoneResidence] AS [PhoneResidence], 
+      [SPatient].[PhoneWork] AS [PhoneWork], 
+      [SPatient].[PhoneCellular] AS [PhoneCellular], 
+      [SPatient].[MothersMaidenName] AS [MothersMaidenName], 
+      [SPatient].[DateOfDeath] AS [DateOfDeath], 
+      [SPatient].[DateOfDeathText] AS [DateOfDeathText], 
+      [SPatient].[EmailAddress] AS [EmailAddress], 
+      [SPatient].[BadAddressIndicator] AS [BadAddressIndicator], 
+      [SPatient].[ExcludeFromFacilityDirectoryFlag] AS [ExcludeFromFacilityDirectoryFlag], 
+      [SPatient].[AddressChangeInstitutionSID] AS [AddressChangeInstitutionSID], 
+      [SPatient].[AddressChangeStaffSID] AS [AddressChangeStaffSID], 
+      [SPatient].[NOKPrimaryChangeDateTime] AS [NOKPrimaryChangeDateTime], 
+      [SPatient].[NOKPrimaryChangeVistaErrorDate] AS [NOKPrimaryChangeVistaErrorDate], 
+      [SPatient].[NOKPrimaryChangeDateTimeTransformSID] AS [NOKPrimaryChangeDateTimeTransformSID], 
+      [SPatient].[NOKSecondaryChangeDateTime] AS [NOKSecondaryChangeDateTime], 
+      [SPatient].[NOKSecondaryChangeVistaErrorDate] AS [NOKSecondaryChangeVistaErrorDate], 
+      [SPatient].[NOKSecondaryChangeDateTimeTransformSID] AS [NOKSecondaryChangeDateTimeTransformSID], 
+      [SPatient].[NOKRelationshipToPatient] AS [NOKRelationshipToPatient], 
+      [SPatient].[NOKDesigneeSameAsFlag] AS [NOKDesigneeSameAsFlag], 
+      [SPatient].[NOKEmergencyContactSameAsFlag] AS [NOKEmergencyContactSameAsFlag], 
+      [SPatient].[TemporaryAddressActiveFlag] AS [TemporaryAddressActiveFlag], 
+      [SPatient].[TemporaryAddressLastEditedDateTime] AS [TemporaryAddressLastEditedDateTime], 
+      [SPatient].[TemporaryAddressLastEditedVistaErrorDate] AS [TemporaryAddressLastEditedVistaErrorDate], 
+      [SPatient].[TemporaryAddressLastEditedDateTimeTransformSID] AS [TemporaryAddressLastEditedDateTimeTransformSID], 
+      [SPatient].[TemporaryAddressChangeInstitutionSID] AS [TemporaryAddressChangeInstitutionSID], 
+      [SPatient].[TemporaryAddressStartDate] AS [TemporaryAddressStartDate], 
+      [SPatient].[TemporaryAddressStartVistaErrorDate] AS [TemporaryAddressStartVistaErrorDate], 
+      [SPatient].[TemporaryAddressStartDateTransformSID] AS [TemporaryAddressStartDateTransformSID], 
+      [SPatient].[TemporaryAddressEndDate] AS [TemporaryAddressEndDate], 
+      [SPatient].[TemporaryAddressEndVistaErrorDate] AS [TemporaryAddressEndVistaErrorDate], 
+      [SPatient].[TemporaryAddressEndDateTransformSID] AS [TemporaryAddressEndDateTransformSID], 
+      [SPatient].[ConfidentialAddressActiveFlag] AS [ConfidentialAddressActiveFlag], 
+      [SPatient].[CDFlag] AS [CDFlag], 
+      [SPatient].[CDDecidedByName] AS [CDDecidedByName], 
+      [SPatient].[CDDecisionDate] AS [CDDecisionDate], 
+      [SPatient].[CDDecisionVistaErrorDate] AS [CDDecisionVistaErrorDate], 
+      [SPatient].[CDDecisionDateTransformSID] AS [CDDecisionDateTransformSID], 
+      [SPatient].[CDReviewedDate] AS [CDReviewedDate], 
+      [SPatient].[CDReviewedVistaErrorDate] AS [CDReviewedVistaErrorDate], 
+      [SPatient].[CDReviewedDateTransformSID] AS [CDReviewedDateTransformSID], 
+      [SPatient].[CDDeterminingInstitutionSID] AS [CDDeterminingInstitutionSID], 
+      [SPatient].[CDDeterminationType] AS [CDDeterminationType], 
+      [SPatient].[CurrentPurpleHeartDecisionType] AS [CurrentPurpleHeartDecisionType], 
+      [SPatient].[CurrentPurpleHeartStatus] AS [CurrentPurpleHeartStatus], 
+      [SPatient].[PurpleHeartInstitutionSID] AS [PurpleHeartInstitutionSID], 
+      [SPatient].[MedicaidNumber] AS [MedicaidNumber], 
+      [SPatient].[RaceSID] AS [RaceSID], 
+      [SPatient].[Gender] AS [Gender], 
+      [SPatient].[Age] AS [Age], 
+      [SPatient].[StateSID] AS [StateSID], 
+      [SPatient].[State] AS [State], 
+      [SPatient].[County] AS [County], 
+      [SPatient].[Deceased] AS [Deceased], 
+      [SPatient].[PatientICN] AS [PatientICN], 
+      [SPatient].[PatientICNChecksum] AS [PatientICNChecksum], 
+      [SPatient].[PseudoSSNFlag] AS [PseudoSSNFlag], 
+      [SPatient].[PeriodOfServiceSID] AS [PeriodOfServiceSID], 
+      [SPatient].[PeriodOfService] AS [PeriodOfService], 
+      [SPatient].[CurrentMeansTestStatusSID] AS [CurrentMeansTestStatusSID], 
+      [SPatient].[MaritalStatusSID] AS [MaritalStatusSID], 
+      [SPatient].[MaritalStatus] AS [MaritalStatus], 
+      [SPatient].[PercentServiceConnect] AS [PercentServiceConnect], 
+      [SPatient].[InsuranceCoverageFlag] AS [InsuranceCoverageFlag], 
+      [SPatient].[ReligionSID] AS [ReligionSID], 
+      [SPatient].[Religion] AS [Religion], 
+      [SPatient].[AgentOrangeExposureFlag] AS [AgentOrangeExposureFlag], 
+      [SPatient].[AgentOrangeLocationCode] AS [AgentOrangeLocationCode], 
+      [SPatient].[RadiationExposureCode] AS [RadiationExposureCode], 
+      [SPatient].[IonizingRadiationExposureFlag] AS [IonizingRadiationExposureFlag], 
+      [SPatient].[SHADFlag] AS [SHADFlag], 
+      [SPatient].[VeteranFlag] AS [VeteranFlag], 
+      [SPatient].[CombatFlag] AS [CombatFlag], 
+      [SPatient].[CombatEligibilityEndDate] AS [CombatEligibilityEndDate], 
+      [SPatient].[CombatEligibilityEndVistaErrorDate] AS [CombatEligibilityEndVistaErrorDate], 
+      [SPatient].[CombatEligibilityEndDateTransformSID] AS [CombatEligibilityEndDateTransformSID], 
+      [SPatient].[TestPatientFlag] AS [TestPatientFlag], 
+      [SPatient].[CDWPossibleTestPatientFlag] AS [CDWPossibleTestPatientFlag], 
+      [SPatient].[SpinalCordInjuryType] AS [SpinalCordInjuryType], 
+      [SPatient].[EnteredIntoFileDate] AS [EnteredIntoFileDate], 
+      [SPatient].[EnteredIntoFileVistaErrorDate] AS [EnteredIntoFileVistaErrorDate], 
+      [SPatient].[EnteredIntoFileDateTransformSID] AS [EnteredIntoFileDateTransformSID], 
+      [SPatient].[EmergencyResponseIndicator] AS [EmergencyResponseIndicator], 
+      [SPatient].[EligibilitySID] AS [EligibilitySID], 
+      [SPatient].[Eligibility] AS [Eligibility], 
+      [SPatient].[EligibilityVACode] AS [EligibilityVACode], 
+      [SPatient].[DateOfBirth] AS [DateOfBirth], 
+      [SPatient].[DateOfBirthText] AS [DateOfBirthText], 
+      [SPatient].[SensitiveFlag] AS [SensitiveFlag], 
+      [SPatient].[LastServiceEntryDate] AS [LastServiceEntryDate], 
+      [SPatient].[LastServiceEntryVistaErrorDate] AS [LastServiceEntryVistaErrorDate], 
+      [SPatient].[LastServiceEntryDateTransformSID] AS [LastServiceEntryDateTransformSID], 
+      [SPatient].[LastServiceSeparationDate] AS [LastServiceSeparationDate], 
+      [SPatient].[LastServiceSeparationVistaErrorDate] AS [LastServiceSeparationVistaErrorDate], 
+      [SPatient].[LastServiceSeparationDateTransformSID] AS [LastServiceSeparationDateTransformSID], 
+      [SPatient].[PreferredInstitutionSID] AS [PreferredInstitutionSID], 
+      [SPatient].[POWFlag] AS [POWFlag], 
+      [SPatient].[POWLocationSID] AS [POWLocationSID], 
+      [SPatient].[POWFromVistaDate] AS [POWFromVistaDate], 
+      [SPatient].[POWToVistaDate] AS [POWToVistaDate], 
+      [SPatient].[CombatFromVistaDate] AS [CombatFromVistaDate], 
+      [SPatient].[CombatToVistaDate] AS [CombatToVistaDate], 
+      [SPatient].[ClaimNumber] AS [ClaimNumber], 
+      [SPatient].[RoomBedSID] AS [RoomBedSID], 
+      [SPatient].[IneligibleDate] AS [IneligibleDate], 
+      [SPatient].[IneligibleVistaErrorDate] AS [IneligibleVistaErrorDate], 
+      [SPatient].[IneligibleDateTransformSID] AS [IneligibleDateTransformSID], 
+      [SPatient].[IneligibleReason] AS [IneligibleReason], 
+      [SPatient].[EligibilityStatus] AS [EligibilityStatus], 
+      [SPatient].[EligibilityVerificationSource] AS [EligibilityVerificationSource], 
+      [SPatient].[GISLocatorName] AS [GISLocatorName], 
+      [SPatient].[GISMatchStatusCode] AS [GISMatchStatusCode], 
+      [SPatient].[GISMatchScore] AS [GISMatchScore], 
+      [SPatient].[GISMatchMethodCode] AS [GISMatchMethodCode], 
+      [SPatient].[GISMatchedAddress] AS [GISMatchedAddress], 
+      [SPatient].[GISAddressType] AS [GISAddressType], 
+      [SPatient].[GISStreetSide] AS [GISStreetSide], 
+      [SPatient].[GISPatientAddressLongitude] AS [GISPatientAddressLongitude], 
+      [SPatient].[GISPatientAddressLatitude] AS [GISPatientAddressLatitude], 
+      [SPatient].[GISAddressUpdatedDate] AS [GISAddressUpdatedDate], 
+      [SPatient].[GISFIPSCode] AS [GISFIPSCode], 
+      [SPatient].[GISMarket] AS [GISMarket], 
+      [SPatient].[GISSubmarket] AS [GISSubmarket], 
+      [SPatient].[GISSector] AS [GISSector], 
+      [SPatient].[GISURH] AS [GISURH], 
+      [SPatient].[GISCongressDistrict] AS [GISCongressDistrict]
+      FROM [SPatient].[SPatient] AS [SPatient]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="Telederm_Condition">
+          <Key>
+            <PropertyRef Name="ConditionSID" />
+          </Key>
+          <Property Name="ConditionSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="ICD9SID" Type="int" />
+          <Property Name="ICD10SID" Type="int" />
+          <Property Name="LocationSID" Type="smallint" />
+          <Property Name="LocationText" Type="varchar" MaxLength="250" />
+          <Property Name="FoundDate" Type="datetime" />
+          <Property Name="ResolvedDate" Type="datetime" />
+          <Property Name="SuspectedMelanoma" Type="bit" />
+        </EntityType>
+        <EntityType Name="Telederm_Consult">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+          </Key>
+          <Property Name="ConsultSID" Type="bigint" Nullable="false" />
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="RequestingProviderSID" Type="int" />
+          <Property Name="ReadingProviderSID" Type="int" />
+          <Property Name="ImagerSID" Type="int" />
+          <Property Name="OrderingInstitutionSID" Type="int" />
+          <Property Name="RequestServiceSID" Type="int" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="CompletionDate" Type="datetime" />
+          <Property Name="RemoteConsultSID" Type="bigint" />
+          <Property Name="ImageComments" Type="text" />
+        </EntityType>
+        <EntityType Name="Telederm_ConsultXCondition">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+          </Key>
+          <Property Name="ConsultSID" Type="bigint" Nullable="false" />
+          <Property Name="ConditionSID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Telederm_DifferentialDiagnosis">
+          <Key>
+            <PropertyRef Name="DiffDxSID" />
+          </Key>
+          <Property Name="DiffDxSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="int" Nullable="false" />
+          <Property Name="ConsultSID" Type="bigint" Nullable="false" />
+          <Property Name="ICD9SID" Type="int" />
+          <Property Name="ICD10SID" Type="int" />
+          <Property Name="DiffDxOrdinal" Type="int" />
+        </EntityType>
+        <EntityType Name="Telederm_PathologyReport">
+          <Key>
+            <PropertyRef Name="ConditionPathologySID" />
+          </Key>
+          <Property Name="ConditionPathologySID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="int" Nullable="false" />
+          <Property Name="FinalDiagnosis" Type="varchar" MaxLength="250" />
+          <Property Name="ICD9SID" Type="int" />
+          <Property Name="ICD10SID" Type="int" />
+          <Property Name="CPC_CorrelationSID" Type="int" />
+          <Property Name="BreslowThickness" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="MitoticIndex" Type="varchar" MaxLength="250" />
+          <Property Name="TNM_StageSID" Type="int" />
+          <Property Name="PathologistSID" Type="int" />
+          <Property Name="ReportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Telederm_PathologyReportRaw">
+          <Key>
+            <PropertyRef Name="PathologyReportRawSID" />
+          </Key>
+          <Property Name="PathologyReportRawSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="PathologyReportRaw" Type="varchar(max)" />
+          <Property Name="DateRead" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Telederm_Patient">
+          <Key>
+            <PropertyRef Name="PatientSID" />
+          </Key>
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="PatientICN" Type="varchar" MaxLength="50" />
+          <Property Name="IsSCSC" Type="bit" />
+        </EntityType>
+        <EntityType Name="Telederm_PatientAddress">
+          <Key>
+            <PropertyRef Name="PatAddressSID" />
+          </Key>
+          <Property Name="PatAddressSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="DateStart" Type="datetime" />
+          <Property Name="DateEnd" Type="datetime" />
+          <Property Name="StreetAddress1" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress3" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Zip4" Type="varchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="BadAddressIndicator" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Telederm_TreatmentRequest">
+          <Key>
+            <PropertyRef Name="TreatmentRequestSID" />
+          </Key>
+          <Property Name="TreatmentRequestSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="int" Nullable="false" />
+          <Property Name="DateRequested" Type="datetime" />
+          <Property Name="DateCompleted" Type="datetime" />
+          <Property Name="ProviderSID" Type="int" />
+          <Property Name="ProcedureSID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'VDWWork.Con.Consult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Consult">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+            
+            
+            
+          </Key>
+          <Property Name="ConsultSID" Type="bigint" Nullable="false" />
+          <Property Name="ConsultIEN" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sta3n" Type="smallint" Nullable="false" />
+          <Property Name="PatientSID" Type="int" />
+          <Property Name="PatientLocationSID" Type="int" />
+          <Property Name="ProtocolSID" Type="int" />
+          <Property Name="GMRCProcedureSID" Type="int" />
+          <Property Name="GMRCProcedure" Type="varchar" MaxLength="100" />
+          <Property Name="ClinicalProcedureSID" Type="int" />
+          <Property Name="ToRequestServiceSID" Type="int" />
+          <Property Name="ToRequestServiceName" Type="varchar" MaxLength="100" />
+          <Property Name="RequestDateTime" Type="datetime2" Precision="0" />
+          <Property Name="RequestVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="RequestDateTimeTransformSID" Type="bigint" />
+          <Property Name="RequestDateSID" Type="int" Nullable="false" />
+          <Property Name="FileEntryDateTime" Type="datetime2" Precision="0" />
+          <Property Name="FileEntryVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="FileEntryDateTimeTransformSID" Type="bigint" />
+          <Property Name="FromLocationSID" Type="int" />
+          <Property Name="RequestType" Type="varchar" MaxLength="50" />
+          <Property Name="ToStaffSID" Type="int" />
+          <Property Name="OrderStatusSID" Type="int" />
+          <Property Name="CPRSOrderSID" Type="bigint" />
+          <Property Name="CPRSStatus" Type="varchar" MaxLength="50" />
+          <Property Name="RecentActivityTypeSID" Type="int" />
+          <Property Name="RecentActivityType" Type="varchar" MaxLength="100" />
+          <Property Name="SendingStaffSID" Type="int" />
+          <Property Name="SignificantFindings" Type="char" MaxLength="1" />
+          <Property Name="UrgencyProtocolSID" Type="int" />
+          <Property Name="Urgency" Type="varchar" MaxLength="50" />
+          <Property Name="ConsultPlaceProtocolSID" Type="int" />
+          <Property Name="PlaceOfConsultation" Type="varchar" MaxLength="50" />
+          <Property Name="DisplayTextOfItemOrdered" Type="varchar" MaxLength="100" />
+          <Property Name="OrderingInstitutionSID" Type="int" />
+          <Property Name="OrderingSta3n" Type="smallint" />
+          <Property Name="InpatOutpat" Type="varchar" MaxLength="50" />
+          <Property Name="ProvisionalDiagnosis" Type="varchar" MaxLength="255" />
+          <Property Name="ProvisionalDiagnosisCode" Type="varchar" MaxLength="50" />
+          <Property Name="RemoteRole" Type="varchar" MaxLength="50" />
+          <Property Name="RemoteService" Type="varchar" MaxLength="100" />
+          <Property Name="RemoteConsultInstitutionSID" Type="int" />
+          <Property Name="RemoteConsultSta3n" Type="varchar" MaxLength="50" />
+          <Property Name="RemoteConsultSID" Type="bigint" />
+          <Property Name="TIUDocumentSID" Type="bigint" />
+          <Property Name="EarliestDate" Type="date" />
+          <Property Name="EarliestVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="EarliestDateTransformSID" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'VDWWork.SPatient.SPatient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SPatient">
+          <Key>
+            <PropertyRef Name="PatientSID" />
+          </Key>
+          <Property Name="PatientSID" Type="int" Nullable="false" />
+          <Property Name="PatientIEN" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sta3n" Type="smallint" Nullable="false" />
+          <Property Name="PatientName" Type="varchar" MaxLength="100" />
+          <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientSSN" Type="varchar" MaxLength="50" />
+          <Property Name="ScrSSN" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress1" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress3" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Zip4" Type="varchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="CountrySID" Type="int" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneResidence" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneWork" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneCellular" Type="varchar" MaxLength="50" />
+          <Property Name="MothersMaidenName" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfDeath" Type="date" />
+          <Property Name="DateOfDeathText" Type="varchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="BadAddressIndicator" Type="varchar" MaxLength="50" />
+          <Property Name="ExcludeFromFacilityDirectoryFlag" Type="char" MaxLength="1" />
+          <Property Name="AddressChangeInstitutionSID" Type="int" />
+          <Property Name="AddressChangeStaffSID" Type="int" />
+          <Property Name="NOKPrimaryChangeDateTime" Type="datetime2" Precision="0" />
+          <Property Name="NOKPrimaryChangeVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="NOKPrimaryChangeDateTimeTransformSID" Type="bigint" />
+          <Property Name="NOKSecondaryChangeDateTime" Type="datetime2" Precision="0" />
+          <Property Name="NOKSecondaryChangeVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="NOKSecondaryChangeDateTimeTransformSID" Type="bigint" />
+          <Property Name="NOKRelationshipToPatient" Type="varchar" MaxLength="50" />
+          <Property Name="NOKDesigneeSameAsFlag" Type="char" MaxLength="1" />
+          <Property Name="NOKEmergencyContactSameAsFlag" Type="char" MaxLength="1" />
+          <Property Name="TemporaryAddressActiveFlag" Type="char" MaxLength="1" />
+          <Property Name="TemporaryAddressLastEditedDateTime" Type="datetime2" Precision="0" />
+          <Property Name="TemporaryAddressLastEditedVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="TemporaryAddressLastEditedDateTimeTransformSID" Type="bigint" />
+          <Property Name="TemporaryAddressChangeInstitutionSID" Type="int" />
+          <Property Name="TemporaryAddressStartDate" Type="date" />
+          <Property Name="TemporaryAddressStartVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="TemporaryAddressStartDateTransformSID" Type="bigint" />
+          <Property Name="TemporaryAddressEndDate" Type="date" />
+          <Property Name="TemporaryAddressEndVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="TemporaryAddressEndDateTransformSID" Type="bigint" />
+          <Property Name="ConfidentialAddressActiveFlag" Type="char" MaxLength="1" />
+          <Property Name="CDFlag" Type="char" MaxLength="1" />
+          <Property Name="CDDecidedByName" Type="varchar" MaxLength="50" />
+          <Property Name="CDDecisionDate" Type="date" />
+          <Property Name="CDDecisionVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="CDDecisionDateTransformSID" Type="bigint" />
+          <Property Name="CDReviewedDate" Type="date" />
+          <Property Name="CDReviewedVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="CDReviewedDateTransformSID" Type="bigint" />
+          <Property Name="CDDeterminingInstitutionSID" Type="int" />
+          <Property Name="CDDeterminationType" Type="varchar" MaxLength="50" />
+          <Property Name="CurrentPurpleHeartDecisionType" Type="varchar" MaxLength="50" />
+          <Property Name="CurrentPurpleHeartStatus" Type="varchar" MaxLength="50" />
+          <Property Name="PurpleHeartInstitutionSID" Type="int" />
+          <Property Name="MedicaidNumber" Type="varchar" MaxLength="50" />
+          <Property Name="RaceSID" Type="int" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="Age" Type="numeric" />
+          <Property Name="StateSID" Type="int" />
+          <Property Name="State" Type="varchar" MaxLength="30" />
+          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="Deceased" Type="char" MaxLength="1" />
+          <Property Name="PatientICN" Type="varchar" MaxLength="50" />
+          <Property Name="PatientICNChecksum" Type="varchar" MaxLength="50" />
+          <Property Name="PseudoSSNFlag" Type="char" MaxLength="1" />
+          <Property Name="PeriodOfServiceSID" Type="int" />
+          <Property Name="PeriodOfService" Type="varchar" MaxLength="50" />
+          <Property Name="CurrentMeansTestStatusSID" Type="int" />
+          <Property Name="MaritalStatusSID" Type="int" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="25" />
+          <Property Name="PercentServiceConnect" Type="int" />
+          <Property Name="InsuranceCoverageFlag" Type="char" MaxLength="1" />
+          <Property Name="ReligionSID" Type="int" />
+          <Property Name="Religion" Type="varchar" MaxLength="30" />
+          <Property Name="AgentOrangeExposureFlag" Type="char" MaxLength="1" />
+          <Property Name="AgentOrangeLocationCode" Type="varchar" MaxLength="50" />
+          <Property Name="RadiationExposureCode" Type="varchar" MaxLength="50" />
+          <Property Name="IonizingRadiationExposureFlag" Type="char" MaxLength="1" />
+          <Property Name="SHADFlag" Type="char" MaxLength="1" />
+          <Property Name="VeteranFlag" Type="char" MaxLength="1" />
+          <Property Name="CombatFlag" Type="char" MaxLength="1" />
+          <Property Name="CombatEligibilityEndDate" Type="date" />
+          <Property Name="CombatEligibilityEndVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="CombatEligibilityEndDateTransformSID" Type="bigint" />
+          <Property Name="TestPatientFlag" Type="char" MaxLength="1" />
+          <Property Name="CDWPossibleTestPatientFlag" Type="char" MaxLength="1" />
+          <Property Name="SpinalCordInjuryType" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredIntoFileDate" Type="date" />
+          <Property Name="EnteredIntoFileVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredIntoFileDateTransformSID" Type="bigint" />
+          <Property Name="EmergencyResponseIndicator" Type="varchar" MaxLength="50" />
+          <Property Name="EligibilitySID" Type="int" />
+          <Property Name="Eligibility" Type="varchar" MaxLength="50" />
+          <Property Name="EligibilityVACode" Type="numeric" Precision="9" Scale="4" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="DateOfBirthText" Type="varchar" MaxLength="50" />
+          <Property Name="SensitiveFlag" Type="char" MaxLength="1" />
+          <Property Name="LastServiceEntryDate" Type="date" />
+          <Property Name="LastServiceEntryVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="LastServiceEntryDateTransformSID" Type="bigint" />
+          <Property Name="LastServiceSeparationDate" Type="date" />
+          <Property Name="LastServiceSeparationVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="LastServiceSeparationDateTransformSID" Type="bigint" />
+          <Property Name="PreferredInstitutionSID" Type="int" />
+          <Property Name="POWFlag" Type="char" MaxLength="1" />
+          <Property Name="POWLocationSID" Type="int" />
+          <Property Name="POWFromVistaDate" Type="varchar" MaxLength="50" />
+          <Property Name="POWToVistaDate" Type="varchar" MaxLength="50" />
+          <Property Name="CombatFromVistaDate" Type="varchar" MaxLength="50" />
+          <Property Name="CombatToVistaDate" Type="varchar" MaxLength="50" />
+          <Property Name="ClaimNumber" Type="varchar" MaxLength="255" />
+          <Property Name="RoomBedSID" Type="int" />
+          <Property Name="IneligibleDate" Type="date" />
+          <Property Name="IneligibleVistaErrorDate" Type="varchar" MaxLength="50" />
+          <Property Name="IneligibleDateTransformSID" Type="bigint" />
+          <Property Name="IneligibleReason" Type="varchar" MaxLength="50" />
+          <Property Name="EligibilityStatus" Type="varchar" MaxLength="50" />
+          <Property Name="EligibilityVerificationSource" Type="varchar" MaxLength="50" />
+          <Property Name="GISLocatorName" Type="varchar" MaxLength="50" />
+          <Property Name="GISMatchStatusCode" Type="varchar" MaxLength="50" />
+          <Property Name="GISMatchScore" Type="int" />
+          <Property Name="GISMatchMethodCode" Type="varchar" MaxLength="50" />
+          <Property Name="GISMatchedAddress" Type="varchar" MaxLength="50" />
+          <Property Name="GISAddressType" Type="varchar" MaxLength="50" />
+          <Property Name="GISStreetSide" Type="varchar" MaxLength="50" />
+          <Property Name="GISPatientAddressLongitude" Type="float" />
+          <Property Name="GISPatientAddressLatitude" Type="float" />
+          <Property Name="GISAddressUpdatedDate" Type="date" />
+          <Property Name="GISFIPSCode" Type="varchar" MaxLength="50" />
+          <Property Name="GISMarket" Type="varchar" MaxLength="50" />
+          <Property Name="GISSubmarket" Type="varchar" MaxLength="50" />
+          <Property Name="GISSector" Type="varchar" MaxLength="50" />
+          <Property Name="GISURH" Type="char" MaxLength="1" />
+          <Property Name="GISCongressDistrict" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VDWWorkModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VDWWorkEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Telederm_Condition" EntityType="VDWWorkModel.Telederm_Condition" />
+          <EntitySet Name="Telederm_Consult" EntityType="VDWWorkModel.Telederm_Consult" />
+          <EntitySet Name="Telederm_ConsultXCondition" EntityType="VDWWorkModel.Telederm_ConsultXCondition" />
+          <EntitySet Name="Telederm_DifferentialDiagnosis" EntityType="VDWWorkModel.Telederm_DifferentialDiagnosis" />
+          <EntitySet Name="Telederm_PathologyReport" EntityType="VDWWorkModel.Telederm_PathologyReport" />
+          <EntitySet Name="Telederm_PathologyReportRaw" EntityType="VDWWorkModel.Telederm_PathologyReportRaw" />
+          <EntitySet Name="Telederm_Patient" EntityType="VDWWorkModel.Telederm_Patient" />
+          <EntitySet Name="Telederm_PatientAddress" EntityType="VDWWorkModel.Telederm_PatientAddress" />
+          <EntitySet Name="Telederm_TreatmentRequest" EntityType="VDWWorkModel.Telederm_TreatmentRequest" />
+          <AssociationSet Name="Telederm_PatientTelederm_PatientAddress" Association="VDWWorkModel.Telederm_PatientTelederm_PatientAddress">
+            <End Role="Telederm_Patient" EntitySet="Telederm_Patient" />
+            <End Role="Telederm_PatientAddress" EntitySet="Telederm_PatientAddress" />
+          </AssociationSet>
+          <AssociationSet Name="Telederm_PatientTelederm_PathologyReportRaw" Association="VDWWorkModel.Telederm_PatientTelederm_PathologyReportRaw">
+            <End Role="Telederm_Patient" EntitySet="Telederm_Patient" />
+            <End Role="Telederm_PathologyReportRaw" EntitySet="Telederm_PathologyReportRaw" />
+          </AssociationSet>
+          <AssociationSet Name="Telederm_PatientTelederm_Consult" Association="VDWWorkModel.Telederm_PatientTelederm_Consult">
+            <End Role="Telederm_Patient" EntitySet="Telederm_Patient" />
+            <End Role="Telederm_Consult" EntitySet="Telederm_Consult" />
+          </AssociationSet>
+          <AssociationSet Name="Telederm_PatientTelederm_Condition" Association="VDWWorkModel.Telederm_PatientTelederm_Condition">
+            <End Role="Telederm_Patient" EntitySet="Telederm_Patient" />
+            <End Role="Telederm_Condition" EntitySet="Telederm_Condition" />
+          </AssociationSet>
+          <AssociationSet Name="Telederm_ConditionTelederm_TreatmentRequest" Association="VDWWorkModel.Telederm_ConditionTelederm_TreatmentRequest">
+            <End Role="Telederm_Condition" EntitySet="Telederm_Condition" />
+            <End Role="Telederm_TreatmentRequest" EntitySet="Telederm_TreatmentRequest" />
+          </AssociationSet>
+          <EntitySet Name="Consults" EntityType="VDWWorkModel.Consult" />
+          <AssociationSet Name="Telederm_ConditionTelederm_PathologyReport" Association="VDWWorkModel.Telederm_ConditionTelederm_PathologyReport">
+            <End Role="Telederm_Condition" EntitySet="Telederm_Condition" />
+            <End Role="Telederm_PathologyReport" EntitySet="Telederm_PathologyReport" />
+          </AssociationSet>
+          <AssociationSet Name="ConsultTelederm_Consult" Association="VDWWorkModel.ConsultTelederm_Consult">
+            <End Role="Consult" EntitySet="Consults" />
+            <End Role="Telederm_Consult" EntitySet="Telederm_Consult" />
+          </AssociationSet>
+          <EntitySet Name="SPatients" EntityType="VDWWorkModel.SPatient" />
+          <AssociationSet Name="SPatientTelederm_Patient" Association="VDWWorkModel.SPatientTelederm_Patient">
+            <End Role="SPatient" EntitySet="SPatients" />
+            <End Role="Telederm_Patient" EntitySet="Telederm_Patient" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Telederm_Condition">
+          <Key>
+            <PropertyRef Name="ConditionSID" />
+          </Key>
+          <Property Name="ConditionSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="Int32" Nullable="false" />
+          <Property Name="ICD9SID" Type="Int32" />
+          <Property Name="ICD10SID" Type="Int32" />
+          <Property Name="LocationSID" Type="Int16" />
+          <Property Name="LocationText" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FoundDate" Type="DateTime" Precision="3" />
+          <Property Name="ResolvedDate" Type="DateTime" Precision="3" />
+          <Property Name="SuspectedMelanoma" Type="Boolean" />
+          <NavigationProperty Name="Telederm_Patient" Relationship="VDWWorkModel.Telederm_PatientTelederm_Condition" FromRole="Telederm_Condition" ToRole="Telederm_Patient" />
+          <NavigationProperty Name="Telederm_TreatmentRequest" Relationship="VDWWorkModel.Telederm_ConditionTelederm_TreatmentRequest" FromRole="Telederm_Condition" ToRole="Telederm_TreatmentRequest" />
+          <NavigationProperty Name="Telederm_PathologyReport" Relationship="VDWWorkModel.Telederm_ConditionTelederm_PathologyReport" FromRole="Telederm_Condition" ToRole="Telederm_PathologyReport" />
+        </EntityType>
+        <EntityType Name="Telederm_Consult">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+          </Key>
+          <Property Name="ConsultSID" Type="Int64" Nullable="false" />
+          <Property Name="PatientSID" Type="Int32" Nullable="false" />
+          <Property Name="RequestingProviderSID" Type="Int32" />
+          <Property Name="ReadingProviderSID" Type="Int32" />
+          <Property Name="ImagerSID" Type="Int32" />
+          <Property Name="OrderingInstitutionSID" Type="Int32" />
+          <Property Name="RequestServiceSID" Type="Int32" />
+          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+          <Property Name="RemoteConsultSID" Type="Int64" />
+          <Property Name="ImageComments" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Telederm_Patient" Relationship="VDWWorkModel.Telederm_PatientTelederm_Consult" FromRole="Telederm_Consult" ToRole="Telederm_Patient" />
+          <NavigationProperty Name="Consult" Relationship="VDWWorkModel.ConsultTelederm_Consult" FromRole="Telederm_Consult" ToRole="Consult" />
+        </EntityType>
+        <EntityType Name="Telederm_ConsultXCondition">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+          </Key>
+          <Property Name="ConsultSID" Type="Int64" Nullable="false" />
+          <Property Name="ConditionSID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Telederm_DifferentialDiagnosis">
+          <Key>
+            <PropertyRef Name="DiffDxSID" />
+          </Key>
+          <Property Name="DiffDxSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="Int32" Nullable="false" />
+          <Property Name="ConsultSID" Type="Int64" Nullable="false" />
+          <Property Name="ICD9SID" Type="Int32" />
+          <Property Name="ICD10SID" Type="Int32" />
+          <Property Name="DiffDxOrdinal" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Telederm_PathologyReport">
+          <Key>
+            <PropertyRef Name="ConditionPathologySID" />
+          </Key>
+          <Property Name="ConditionPathologySID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="Int32" Nullable="false" />
+          <Property Name="FinalDiagnosis" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ICD9SID" Type="Int32" />
+          <Property Name="ICD10SID" Type="Int32" />
+          <Property Name="CPC_CorrelationSID" Type="Int32" />
+          <Property Name="BreslowThickness" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="MitoticIndex" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="TNM_StageSID" Type="Int32" />
+          <Property Name="PathologistSID" Type="Int32" />
+          <Property Name="ReportDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Telederm_Condition" Relationship="VDWWorkModel.Telederm_ConditionTelederm_PathologyReport" FromRole="Telederm_PathologyReport" ToRole="Telederm_Condition" />
+        </EntityType>
+        <EntityType Name="Telederm_PathologyReportRaw">
+          <Key>
+            <PropertyRef Name="PathologyReportRawSID" />
+          </Key>
+          <Property Name="PathologyReportRawSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="Int32" Nullable="false" />
+          <Property Name="PathologyReportRaw" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DateRead" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Telederm_Patient" Relationship="VDWWorkModel.Telederm_PatientTelederm_PathologyReportRaw" FromRole="Telederm_PathologyReportRaw" ToRole="Telederm_Patient" />
+        </EntityType>
+        <EntityType Name="Telederm_Patient">
+          <Key>
+            <PropertyRef Name="PatientSID" />
+          </Key>
+          <Property Name="PatientSID" Type="Int32" Nullable="false" />
+          <Property Name="PatientICN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsSCSC" Type="Boolean" />
+          <NavigationProperty Name="Telederm_PatientAddress" Relationship="VDWWorkModel.Telederm_PatientTelederm_PatientAddress" FromRole="Telederm_Patient" ToRole="Telederm_PatientAddress" />
+          <NavigationProperty Name="Telederm_PathologyReportRaw" Relationship="VDWWorkModel.Telederm_PatientTelederm_PathologyReportRaw" FromRole="Telederm_Patient" ToRole="Telederm_PathologyReportRaw" />
+          <NavigationProperty Name="Telederm_Consult" Relationship="VDWWorkModel.Telederm_PatientTelederm_Consult" FromRole="Telederm_Patient" ToRole="Telederm_Consult" />
+          <NavigationProperty Name="Telederm_Condition" Relationship="VDWWorkModel.Telederm_PatientTelederm_Condition" FromRole="Telederm_Patient" ToRole="Telederm_Condition" />
+          <NavigationProperty Name="SPatient" Relationship="VDWWorkModel.SPatientTelederm_Patient" FromRole="Telederm_Patient" ToRole="SPatient" />
+        </EntityType>
+        <EntityType Name="Telederm_PatientAddress">
+          <Key>
+            <PropertyRef Name="PatAddressSID" />
+          </Key>
+          <Property Name="PatAddressSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientSID" Type="Int32" Nullable="false" />
+          <Property Name="DateStart" Type="DateTime" Precision="3" />
+          <Property Name="DateEnd" Type="DateTime" Precision="3" />
+          <Property Name="StreetAddress1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StreetAddress2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StreetAddress3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Zip4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BadAddressIndicator" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Telederm_Patient" Relationship="VDWWorkModel.Telederm_PatientTelederm_PatientAddress" FromRole="Telederm_PatientAddress" ToRole="Telederm_Patient" />
+        </EntityType>
+        <EntityType Name="Telederm_TreatmentRequest">
+          <Key>
+            <PropertyRef Name="TreatmentRequestSID" />
+          </Key>
+          <Property Name="TreatmentRequestSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionSID" Type="Int32" Nullable="false" />
+          <Property Name="DateRequested" Type="DateTime" Precision="3" />
+          <Property Name="DateCompleted" Type="DateTime" Precision="3" />
+          <Property Name="ProviderSID" Type="Int32" />
+          <Property Name="ProcedureSID" Type="Int32" />
+          <NavigationProperty Name="Telederm_Condition" Relationship="VDWWorkModel.Telederm_ConditionTelederm_TreatmentRequest" FromRole="Telederm_TreatmentRequest" ToRole="Telederm_Condition" />
+        </EntityType>
+        <Association Name="Telederm_PatientTelederm_PatientAddress">
+          <End Type="VDWWorkModel.Telederm_Patient" Role="Telederm_Patient" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_PatientAddress" Role="Telederm_PatientAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Patient">
+              <PropertyRef Name="PatientSID" />
+            </Principal>
+            <Dependent Role="Telederm_PatientAddress">
+              <PropertyRef Name="PatientSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Telederm_PatientTelederm_PathologyReportRaw">
+          <End Type="VDWWorkModel.Telederm_Patient" Role="Telederm_Patient" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_PathologyReportRaw" Role="Telederm_PathologyReportRaw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Patient">
+              <PropertyRef Name="PatientSID" />
+            </Principal>
+            <Dependent Role="Telederm_PathologyReportRaw">
+              <PropertyRef Name="PatientSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Telederm_PatientTelederm_Consult">
+          <End Type="VDWWorkModel.Telederm_Patient" Role="Telederm_Patient" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_Consult" Role="Telederm_Consult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Patient">
+              <PropertyRef Name="PatientSID" />
+            </Principal>
+            <Dependent Role="Telederm_Consult">
+              <PropertyRef Name="PatientSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Telederm_PatientTelederm_Condition">
+          <End Type="VDWWorkModel.Telederm_Patient" Role="Telederm_Patient" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_Condition" Role="Telederm_Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Patient">
+              <PropertyRef Name="PatientSID" />
+            </Principal>
+            <Dependent Role="Telederm_Condition">
+              <PropertyRef Name="PatientSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Telederm_ConditionTelederm_TreatmentRequest">
+          <End Type="VDWWorkModel.Telederm_Condition" Role="Telederm_Condition" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_TreatmentRequest" Role="Telederm_TreatmentRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Condition">
+              <PropertyRef Name="ConditionSID" />
+            </Principal>
+            <Dependent Role="Telederm_TreatmentRequest">
+              <PropertyRef Name="ConditionSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Consult">
+          <Key>
+            <PropertyRef Name="ConsultSID" />
+          </Key>
+          <Property Type="Int64" Name="ConsultSID" Nullable="false" />
+          <Property Type="String" Name="ConsultIEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Sta3n" Nullable="false" />
+          <Property Type="Int32" Name="PatientSID" />
+          <Property Type="Int32" Name="PatientLocationSID" />
+          <Property Type="Int32" Name="ProtocolSID" />
+          <Property Type="Int32" Name="GMRCProcedureSID" />
+          <Property Type="String" Name="GMRCProcedure" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ClinicalProcedureSID" />
+          <Property Type="Int32" Name="ToRequestServiceSID" />
+          <Property Type="String" Name="ToRequestServiceName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="RequestDateTime" Precision="0" />
+          <Property Type="String" Name="RequestVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="RequestDateTimeTransformSID" />
+          <Property Type="Int32" Name="RequestDateSID" Nullable="false" />
+          <Property Type="DateTime" Name="FileEntryDateTime" Precision="0" />
+          <Property Type="String" Name="FileEntryVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="FileEntryDateTimeTransformSID" />
+          <Property Type="Int32" Name="FromLocationSID" />
+          <Property Type="String" Name="RequestType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ToStaffSID" />
+          <Property Type="Int32" Name="OrderStatusSID" />
+          <Property Type="Int64" Name="CPRSOrderSID" />
+          <Property Type="String" Name="CPRSStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RecentActivityTypeSID" />
+          <Property Type="String" Name="RecentActivityType" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="SendingStaffSID" />
+          <Property Type="String" Name="SignificantFindings" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="UrgencyProtocolSID" />
+          <Property Type="String" Name="Urgency" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ConsultPlaceProtocolSID" />
+          <Property Type="String" Name="PlaceOfConsultation" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DisplayTextOfItemOrdered" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OrderingInstitutionSID" />
+          <Property Type="Int16" Name="OrderingSta3n" />
+          <Property Type="String" Name="InpatOutpat" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProvisionalDiagnosis" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProvisionalDiagnosisCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RemoteRole" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RemoteService" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RemoteConsultInstitutionSID" />
+          <Property Type="String" Name="RemoteConsultSta3n" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="RemoteConsultSID" />
+          <Property Type="Int64" Name="TIUDocumentSID" />
+          <Property Type="DateTime" Name="EarliestDate" Precision="0" />
+          <Property Type="String" Name="EarliestVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="EarliestDateTransformSID" />
+          <NavigationProperty Name="Telederm_Consult" Relationship="VDWWorkModel.ConsultTelederm_Consult" FromRole="Consult" ToRole="Telederm_Consult" />
+        </EntityType>
+        <Association Name="Telederm_ConditionTelederm_PathologyReport">
+          <End Type="VDWWorkModel.Telederm_Condition" Role="Telederm_Condition" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_PathologyReport" Role="Telederm_PathologyReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Telederm_Condition">
+              <PropertyRef Name="ConditionSID" />
+            </Principal>
+            <Dependent Role="Telederm_PathologyReport">
+              <PropertyRef Name="ConditionSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ConsultTelederm_Consult">
+          <End Type="VDWWorkModel.Consult" Role="Consult" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_Consult" Role="Telederm_Consult" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Consult">
+              <PropertyRef Name="ConsultSID" />
+            </Principal>
+            <Dependent Role="Telederm_Consult">
+              <PropertyRef Name="ConsultSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SPatient">
+          <Key>
+            <PropertyRef Name="PatientSID" />
+          </Key>
+          <Property Type="Int32" Name="PatientSID" Nullable="false" />
+          <Property Type="String" Name="PatientIEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Sta3n" Nullable="false" />
+          <Property Type="String" Name="PatientName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PatientLastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PatientFirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PatientSSN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ScrSSN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zip" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zip4" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PostalCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Province" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CountrySID" />
+          <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneResidence" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneWork" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneCellular" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MothersMaidenName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateOfDeath" Precision="0" />
+          <Property Type="String" Name="DateOfDeathText" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BadAddressIndicator" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ExcludeFromFacilityDirectoryFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="AddressChangeInstitutionSID" />
+          <Property Type="Int32" Name="AddressChangeStaffSID" />
+          <Property Type="DateTime" Name="NOKPrimaryChangeDateTime" Precision="0" />
+          <Property Type="String" Name="NOKPrimaryChangeVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="NOKPrimaryChangeDateTimeTransformSID" />
+          <Property Type="DateTime" Name="NOKSecondaryChangeDateTime" Precision="0" />
+          <Property Type="String" Name="NOKSecondaryChangeVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="NOKSecondaryChangeDateTimeTransformSID" />
+          <Property Type="String" Name="NOKRelationshipToPatient" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOKDesigneeSameAsFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOKEmergencyContactSameAsFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="TemporaryAddressActiveFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="TemporaryAddressLastEditedDateTime" Precision="0" />
+          <Property Type="String" Name="TemporaryAddressLastEditedVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="TemporaryAddressLastEditedDateTimeTransformSID" />
+          <Property Type="Int32" Name="TemporaryAddressChangeInstitutionSID" />
+          <Property Type="DateTime" Name="TemporaryAddressStartDate" Precision="0" />
+          <Property Type="String" Name="TemporaryAddressStartVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="TemporaryAddressStartDateTransformSID" />
+          <Property Type="DateTime" Name="TemporaryAddressEndDate" Precision="0" />
+          <Property Type="String" Name="TemporaryAddressEndVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="TemporaryAddressEndDateTransformSID" />
+          <Property Type="String" Name="ConfidentialAddressActiveFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CDFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CDDecidedByName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CDDecisionDate" Precision="0" />
+          <Property Type="String" Name="CDDecisionVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CDDecisionDateTransformSID" />
+          <Property Type="DateTime" Name="CDReviewedDate" Precision="0" />
+          <Property Type="String" Name="CDReviewedVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CDReviewedDateTransformSID" />
+          <Property Type="Int32" Name="CDDeterminingInstitutionSID" />
+          <Property Type="String" Name="CDDeterminationType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CurrentPurpleHeartDecisionType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CurrentPurpleHeartStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PurpleHeartInstitutionSID" />
+          <Property Type="String" Name="MedicaidNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RaceSID" />
+          <Property Type="String" Name="Gender" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Age" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="StateSID" />
+          <Property Type="String" Name="State" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="County" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Deceased" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PatientICN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PatientICNChecksum" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PseudoSSNFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="PeriodOfServiceSID" />
+          <Property Type="String" Name="PeriodOfService" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CurrentMeansTestStatusSID" />
+          <Property Type="Int32" Name="MaritalStatusSID" />
+          <Property Type="String" Name="MaritalStatus" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PercentServiceConnect" />
+          <Property Type="String" Name="InsuranceCoverageFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="ReligionSID" />
+          <Property Type="String" Name="Religion" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AgentOrangeExposureFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AgentOrangeLocationCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RadiationExposureCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IonizingRadiationExposureFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SHADFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="VeteranFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CombatFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="CombatEligibilityEndDate" Precision="0" />
+          <Property Type="String" Name="CombatEligibilityEndVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CombatEligibilityEndDateTransformSID" />
+          <Property Type="String" Name="TestPatientFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CDWPossibleTestPatientFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SpinalCordInjuryType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="EnteredIntoFileDate" Precision="0" />
+          <Property Type="String" Name="EnteredIntoFileVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="EnteredIntoFileDateTransformSID" />
+          <Property Type="String" Name="EmergencyResponseIndicator" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EligibilitySID" />
+          <Property Type="String" Name="Eligibility" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="EligibilityVACode" Precision="9" Scale="4" />
+          <Property Type="DateTime" Name="DateOfBirth" Precision="0" />
+          <Property Type="String" Name="DateOfBirthText" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SensitiveFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="LastServiceEntryDate" Precision="0" />
+          <Property Type="String" Name="LastServiceEntryVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="LastServiceEntryDateTransformSID" />
+          <Property Type="DateTime" Name="LastServiceSeparationDate" Precision="0" />
+          <Property Type="String" Name="LastServiceSeparationVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="LastServiceSeparationDateTransformSID" />
+          <Property Type="Int32" Name="PreferredInstitutionSID" />
+          <Property Type="String" Name="POWFlag" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="POWLocationSID" />
+          <Property Type="String" Name="POWFromVistaDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POWToVistaDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CombatFromVistaDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CombatToVistaDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClaimNumber" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RoomBedSID" />
+          <Property Type="DateTime" Name="IneligibleDate" Precision="0" />
+          <Property Type="String" Name="IneligibleVistaErrorDate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="IneligibleDateTransformSID" />
+          <Property Type="String" Name="IneligibleReason" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EligibilityStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EligibilityVerificationSource" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISLocatorName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISMatchStatusCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="GISMatchScore" />
+          <Property Type="String" Name="GISMatchMethodCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISMatchedAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISAddressType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISStreetSide" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="GISPatientAddressLongitude" />
+          <Property Type="Double" Name="GISPatientAddressLatitude" />
+          <Property Type="DateTime" Name="GISAddressUpdatedDate" Precision="0" />
+          <Property Type="String" Name="GISFIPSCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISMarket" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISSubmarket" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISSector" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GISURH" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="GISCongressDistrict" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Telederm_Patient" Relationship="VDWWorkModel.SPatientTelederm_Patient" FromRole="SPatient" ToRole="Telederm_Patient" />
+        </EntityType>
+        <Association Name="SPatientTelederm_Patient">
+          <End Type="VDWWorkModel.SPatient" Role="SPatient" Multiplicity="1" />
+          <End Type="VDWWorkModel.Telederm_Patient" Role="Telederm_Patient" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="SPatient">
+              <PropertyRef Name="PatientSID" />
+            </Principal>
+            <Dependent Role="Telederm_Patient">
+              <PropertyRef Name="PatientSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VDWWorkModelStoreContainer" CdmEntityContainer="VDWWorkEntities">
+          <EntitySetMapping Name="Telederm_Condition">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_Condition">
+              <MappingFragment StoreEntitySet="Telederm_Condition">
+                <ScalarProperty Name="ConditionSID" ColumnName="ConditionSID" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="ICD9SID" ColumnName="ICD9SID" />
+                <ScalarProperty Name="ICD10SID" ColumnName="ICD10SID" />
+                <ScalarProperty Name="LocationSID" ColumnName="LocationSID" />
+                <ScalarProperty Name="LocationText" ColumnName="LocationText" />
+                <ScalarProperty Name="FoundDate" ColumnName="FoundDate" />
+                <ScalarProperty Name="ResolvedDate" ColumnName="ResolvedDate" />
+                <ScalarProperty Name="SuspectedMelanoma" ColumnName="SuspectedMelanoma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_Consult">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_Consult">
+              <MappingFragment StoreEntitySet="Telederm_Consult">
+                <ScalarProperty Name="ConsultSID" ColumnName="ConsultSID" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="RequestingProviderSID" ColumnName="RequestingProviderSID" />
+                <ScalarProperty Name="ReadingProviderSID" ColumnName="ReadingProviderSID" />
+                <ScalarProperty Name="ImagerSID" ColumnName="ImagerSID" />
+                <ScalarProperty Name="OrderingInstitutionSID" ColumnName="OrderingInstitutionSID" />
+                <ScalarProperty Name="RequestServiceSID" ColumnName="RequestServiceSID" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+                <ScalarProperty Name="RemoteConsultSID" ColumnName="RemoteConsultSID" />
+                <ScalarProperty Name="ImageComments" ColumnName="ImageComments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_ConsultXCondition">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_ConsultXCondition">
+              <MappingFragment StoreEntitySet="Telederm_ConsultXCondition">
+                <ScalarProperty Name="ConsultSID" ColumnName="ConsultSID" />
+                <ScalarProperty Name="ConditionSID" ColumnName="ConditionSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_DifferentialDiagnosis">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_DifferentialDiagnosis">
+              <MappingFragment StoreEntitySet="Telederm_DifferentialDiagnosis">
+                <ScalarProperty Name="DiffDxSID" ColumnName="DiffDxSID" />
+                <ScalarProperty Name="ConditionSID" ColumnName="ConditionSID" />
+                <ScalarProperty Name="ConsultSID" ColumnName="ConsultSID" />
+                <ScalarProperty Name="ICD9SID" ColumnName="ICD9SID" />
+                <ScalarProperty Name="ICD10SID" ColumnName="ICD10SID" />
+                <ScalarProperty Name="DiffDxOrdinal" ColumnName="DiffDxOrdinal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_PathologyReport">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_PathologyReport">
+              <MappingFragment StoreEntitySet="Telederm_PathologyReport">
+                <ScalarProperty Name="ConditionPathologySID" ColumnName="ConditionPathologySID" />
+                <ScalarProperty Name="ConditionSID" ColumnName="ConditionSID" />
+                <ScalarProperty Name="FinalDiagnosis" ColumnName="FinalDiagnosis" />
+                <ScalarProperty Name="ICD9SID" ColumnName="ICD9SID" />
+                <ScalarProperty Name="ICD10SID" ColumnName="ICD10SID" />
+                <ScalarProperty Name="CPC_CorrelationSID" ColumnName="CPC_CorrelationSID" />
+                <ScalarProperty Name="BreslowThickness" ColumnName="BreslowThickness" />
+                <ScalarProperty Name="MitoticIndex" ColumnName="MitoticIndex" />
+                <ScalarProperty Name="TNM_StageSID" ColumnName="TNM_StageSID" />
+                <ScalarProperty Name="PathologistSID" ColumnName="PathologistSID" />
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_PathologyReportRaw">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_PathologyReportRaw">
+              <MappingFragment StoreEntitySet="Telederm_PathologyReportRaw">
+                <ScalarProperty Name="PathologyReportRawSID" ColumnName="PathologyReportRawSID" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="PathologyReportRaw" ColumnName="PathologyReportRaw" />
+                <ScalarProperty Name="DateRead" ColumnName="DateRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_Patient">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_Patient">
+              <MappingFragment StoreEntitySet="Telederm_Patient">
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="PatientICN" ColumnName="PatientICN" />
+                <ScalarProperty Name="IsSCSC" ColumnName="IsSCSC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_PatientAddress">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_PatientAddress">
+              <MappingFragment StoreEntitySet="Telederm_PatientAddress">
+                <ScalarProperty Name="PatAddressSID" ColumnName="PatAddressSID" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="StreetAddress3" ColumnName="StreetAddress3" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Zip4" ColumnName="Zip4" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BadAddressIndicator" ColumnName="BadAddressIndicator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telederm_TreatmentRequest">
+            <EntityTypeMapping TypeName="VDWWorkModel.Telederm_TreatmentRequest">
+              <MappingFragment StoreEntitySet="Telederm_TreatmentRequest">
+                <ScalarProperty Name="TreatmentRequestSID" ColumnName="TreatmentRequestSID" />
+                <ScalarProperty Name="ConditionSID" ColumnName="ConditionSID" />
+                <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="ProviderSID" ColumnName="ProviderSID" />
+                <ScalarProperty Name="ProcedureSID" ColumnName="ProcedureSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consults">
+            <EntityTypeMapping TypeName="VDWWorkModel.Consult">
+              <MappingFragment StoreEntitySet="Consult">
+                <ScalarProperty Name="EarliestDateTransformSID" ColumnName="EarliestDateTransformSID" />
+                <ScalarProperty Name="EarliestVistaErrorDate" ColumnName="EarliestVistaErrorDate" />
+                <ScalarProperty Name="EarliestDate" ColumnName="EarliestDate" />
+                <ScalarProperty Name="TIUDocumentSID" ColumnName="TIUDocumentSID" />
+                <ScalarProperty Name="RemoteConsultSID" ColumnName="RemoteConsultSID" />
+                <ScalarProperty Name="RemoteConsultSta3n" ColumnName="RemoteConsultSta3n" />
+                <ScalarProperty Name="RemoteConsultInstitutionSID" ColumnName="RemoteConsultInstitutionSID" />
+                <ScalarProperty Name="RemoteService" ColumnName="RemoteService" />
+                <ScalarProperty Name="RemoteRole" ColumnName="RemoteRole" />
+                <ScalarProperty Name="ProvisionalDiagnosisCode" ColumnName="ProvisionalDiagnosisCode" />
+                <ScalarProperty Name="ProvisionalDiagnosis" ColumnName="ProvisionalDiagnosis" />
+                <ScalarProperty Name="InpatOutpat" ColumnName="InpatOutpat" />
+                <ScalarProperty Name="OrderingSta3n" ColumnName="OrderingSta3n" />
+                <ScalarProperty Name="OrderingInstitutionSID" ColumnName="OrderingInstitutionSID" />
+                <ScalarProperty Name="DisplayTextOfItemOrdered" ColumnName="DisplayTextOfItemOrdered" />
+                <ScalarProperty Name="PlaceOfConsultation" ColumnName="PlaceOfConsultation" />
+                <ScalarProperty Name="ConsultPlaceProtocolSID" ColumnName="ConsultPlaceProtocolSID" />
+                <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+                <ScalarProperty Name="UrgencyProtocolSID" ColumnName="UrgencyProtocolSID" />
+                <ScalarProperty Name="SignificantFindings" ColumnName="SignificantFindings" />
+                <ScalarProperty Name="SendingStaffSID" ColumnName="SendingStaffSID" />
+                <ScalarProperty Name="RecentActivityType" ColumnName="RecentActivityType" />
+                <ScalarProperty Name="RecentActivityTypeSID" ColumnName="RecentActivityTypeSID" />
+                <ScalarProperty Name="CPRSStatus" ColumnName="CPRSStatus" />
+                <ScalarProperty Name="CPRSOrderSID" ColumnName="CPRSOrderSID" />
+                <ScalarProperty Name="OrderStatusSID" ColumnName="OrderStatusSID" />
+                <ScalarProperty Name="ToStaffSID" ColumnName="ToStaffSID" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="FromLocationSID" ColumnName="FromLocationSID" />
+                <ScalarProperty Name="FileEntryDateTimeTransformSID" ColumnName="FileEntryDateTimeTransformSID" />
+                <ScalarProperty Name="FileEntryVistaErrorDate" ColumnName="FileEntryVistaErrorDate" />
+                <ScalarProperty Name="FileEntryDateTime" ColumnName="FileEntryDateTime" />
+                <ScalarProperty Name="RequestDateSID" ColumnName="RequestDateSID" />
+                <ScalarProperty Name="RequestDateTimeTransformSID" ColumnName="RequestDateTimeTransformSID" />
+                <ScalarProperty Name="RequestVistaErrorDate" ColumnName="RequestVistaErrorDate" />
+                <ScalarProperty Name="RequestDateTime" ColumnName="RequestDateTime" />
+                <ScalarProperty Name="ToRequestServiceName" ColumnName="ToRequestServiceName" />
+                <ScalarProperty Name="ToRequestServiceSID" ColumnName="ToRequestServiceSID" />
+                <ScalarProperty Name="ClinicalProcedureSID" ColumnName="ClinicalProcedureSID" />
+                <ScalarProperty Name="GMRCProcedure" ColumnName="GMRCProcedure" />
+                <ScalarProperty Name="GMRCProcedureSID" ColumnName="GMRCProcedureSID" />
+                <ScalarProperty Name="ProtocolSID" ColumnName="ProtocolSID" />
+                <ScalarProperty Name="PatientLocationSID" ColumnName="PatientLocationSID" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+                <ScalarProperty Name="Sta3n" ColumnName="Sta3n" />
+                <ScalarProperty Name="ConsultIEN" ColumnName="ConsultIEN" />
+                <ScalarProperty Name="ConsultSID" ColumnName="ConsultSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPatients">
+            <EntityTypeMapping TypeName="VDWWorkModel.SPatient">
+              <MappingFragment StoreEntitySet="SPatient">
+                <ScalarProperty Name="GISCongressDistrict" ColumnName="GISCongressDistrict" />
+                <ScalarProperty Name="GISURH" ColumnName="GISURH" />
+                <ScalarProperty Name="GISSector" ColumnName="GISSector" />
+                <ScalarProperty Name="GISSubmarket" ColumnName="GISSubmarket" />
+                <ScalarProperty Name="GISMarket" ColumnName="GISMarket" />
+                <ScalarProperty Name="GISFIPSCode" ColumnName="GISFIPSCode" />
+                <ScalarProperty Name="GISAddressUpdatedDate" ColumnName="GISAddressUpdatedDate" />
+                <ScalarProperty Name="GISPatientAddressLatitude" ColumnName="GISPatientAddressLatitude" />
+                <ScalarProperty Name="GISPatientAddressLongitude" ColumnName="GISPatientAddressLongitude" />
+                <ScalarProperty Name="GISStreetSide" ColumnName="GISStreetSide" />
+                <ScalarProperty Name="GISAddressType" ColumnName="GISAddressType" />
+                <ScalarProperty Name="GISMatchedAddress" ColumnName="GISMatchedAddress" />
+                <ScalarProperty Name="GISMatchMethodCode" ColumnName="GISMatchMethodCode" />
+                <ScalarProperty Name="GISMatchScore" ColumnName="GISMatchScore" />
+                <ScalarProperty Name="GISMatchStatusCode" ColumnName="GISMatchStatusCode" />
+                <ScalarProperty Name="GISLocatorName" ColumnName="GISLocatorName" />
+                <ScalarProperty Name="EligibilityVerificationSource" ColumnName="EligibilityVerificationSource" />
+                <ScalarProperty Name="EligibilityStatus" ColumnName="EligibilityStatus" />
+                <ScalarProperty Name="IneligibleReason" ColumnName="IneligibleReason" />
+                <ScalarProperty Name="IneligibleDateTransformSID" ColumnName="IneligibleDateTransformSID" />
+                <ScalarProperty Name="IneligibleVistaErrorDate" ColumnName="IneligibleVistaErrorDate" />
+                <ScalarProperty Name="IneligibleDate" ColumnName="IneligibleDate" />
+                <ScalarProperty Name="RoomBedSID" ColumnName="RoomBedSID" />
+                <ScalarProperty Name="ClaimNumber" ColumnName="ClaimNumber" />
+                <ScalarProperty Name="CombatToVistaDate" ColumnName="CombatToVistaDate" />
+                <ScalarProperty Name="CombatFromVistaDate" ColumnName="CombatFromVistaDate" />
+                <ScalarProperty Name="POWToVistaDate" ColumnName="POWToVistaDate" />
+                <ScalarProperty Name="POWFromVistaDate" ColumnName="POWFromVistaDate" />
+                <ScalarProperty Name="POWLocationSID" ColumnName="POWLocationSID" />
+                <ScalarProperty Name="POWFlag" ColumnName="POWFlag" />
+                <ScalarProperty Name="PreferredInstitutionSID" ColumnName="PreferredInstitutionSID" />
+                <ScalarProperty Name="LastServiceSeparationDateTransformSID" ColumnName="LastServiceSeparationDateTransformSID" />
+                <ScalarProperty Name="LastServiceSeparationVistaErrorDate" ColumnName="LastServiceSeparationVistaErrorDate" />
+                <ScalarProperty Name="LastServiceSeparationDate" ColumnName="LastServiceSeparationDate" />
+                <ScalarProperty Name="LastServiceEntryDateTransformSID" ColumnName="LastServiceEntryDateTransformSID" />
+                <ScalarProperty Name="LastServiceEntryVistaErrorDate" ColumnName="LastServiceEntryVistaErrorDate" />
+                <ScalarProperty Name="LastServiceEntryDate" ColumnName="LastServiceEntryDate" />
+                <ScalarProperty Name="SensitiveFlag" ColumnName="SensitiveFlag" />
+                <ScalarProperty Name="DateOfBirthText" ColumnName="DateOfBirthText" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="EligibilityVACode" ColumnName="EligibilityVACode" />
+                <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
+                <ScalarProperty Name="EligibilitySID" ColumnName="EligibilitySID" />
+                <ScalarProperty Name="EmergencyResponseIndicator" ColumnName="EmergencyResponseIndicator" />
+                <ScalarProperty Name="EnteredIntoFileDateTransformSID" ColumnName="EnteredIntoFileDateTransformSID" />
+                <ScalarProperty Name="EnteredIntoFileVistaErrorDate" ColumnName="EnteredIntoFileVistaErrorDate" />
+                <ScalarProperty Name="EnteredIntoFileDate" ColumnName="EnteredIntoFileDate" />
+                <ScalarProperty Name="SpinalCordInjuryType" ColumnName="SpinalCordInjuryType" />
+                <ScalarProperty Name="CDWPossibleTestPatientFlag" ColumnName="CDWPossibleTestPatientFlag" />
+                <ScalarProperty Name="TestPatientFlag" ColumnName="TestPatientFlag" />
+                <ScalarProperty Name="CombatEligibilityEndDateTransformSID" ColumnName="CombatEligibilityEndDateTransformSID" />
+                <ScalarProperty Name="CombatEligibilityEndVistaErrorDate" ColumnName="CombatEligibilityEndVistaErrorDate" />
+                <ScalarProperty Name="CombatEligibilityEndDate" ColumnName="CombatEligibilityEndDate" />
+                <ScalarProperty Name="CombatFlag" ColumnName="CombatFlag" />
+                <ScalarProperty Name="VeteranFlag" ColumnName="VeteranFlag" />
+                <ScalarProperty Name="SHADFlag" ColumnName="SHADFlag" />
+                <ScalarProperty Name="IonizingRadiationExposureFlag" ColumnName="IonizingRadiationExposureFlag" />
+                <ScalarProperty Name="RadiationExposureCode" ColumnName="RadiationExposureCode" />
+                <ScalarProperty Name="AgentOrangeLocationCode" ColumnName="AgentOrangeLocationCode" />
+                <ScalarProperty Name="AgentOrangeExposureFlag" ColumnName="AgentOrangeExposureFlag" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="ReligionSID" ColumnName="ReligionSID" />
+                <ScalarProperty Name="InsuranceCoverageFlag" ColumnName="InsuranceCoverageFlag" />
+                <ScalarProperty Name="PercentServiceConnect" ColumnName="PercentServiceConnect" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="MaritalStatusSID" ColumnName="MaritalStatusSID" />
+                <ScalarProperty Name="CurrentMeansTestStatusSID" ColumnName="CurrentMeansTestStatusSID" />
+                <ScalarProperty Name="PeriodOfService" ColumnName="PeriodOfService" />
+                <ScalarProperty Name="PeriodOfServiceSID" ColumnName="PeriodOfServiceSID" />
+                <ScalarProperty Name="PseudoSSNFlag" ColumnName="PseudoSSNFlag" />
+                <ScalarProperty Name="PatientICNChecksum" ColumnName="PatientICNChecksum" />
+                <ScalarProperty Name="PatientICN" ColumnName="PatientICN" />
+                <ScalarProperty Name="Deceased" ColumnName="Deceased" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateSID" ColumnName="StateSID" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="RaceSID" ColumnName="RaceSID" />
+                <ScalarProperty Name="MedicaidNumber" ColumnName="MedicaidNumber" />
+                <ScalarProperty Name="PurpleHeartInstitutionSID" ColumnName="PurpleHeartInstitutionSID" />
+                <ScalarProperty Name="CurrentPurpleHeartStatus" ColumnName="CurrentPurpleHeartStatus" />
+                <ScalarProperty Name="CurrentPurpleHeartDecisionType" ColumnName="CurrentPurpleHeartDecisionType" />
+                <ScalarProperty Name="CDDeterminationType" ColumnName="CDDeterminationType" />
+                <ScalarProperty Name="CDDeterminingInstitutionSID" ColumnName="CDDeterminingInstitutionSID" />
+                <ScalarProperty Name="CDReviewedDateTransformSID" ColumnName="CDReviewedDateTransformSID" />
+                <ScalarProperty Name="CDReviewedVistaErrorDate" ColumnName="CDReviewedVistaErrorDate" />
+                <ScalarProperty Name="CDReviewedDate" ColumnName="CDReviewedDate" />
+                <ScalarProperty Name="CDDecisionDateTransformSID" ColumnName="CDDecisionDateTransformSID" />
+                <ScalarProperty Name="CDDecisionVistaErrorDate" ColumnName="CDDecisionVistaErrorDate" />
+                <ScalarProperty Name="CDDecisionDate" ColumnName="CDDecisionDate" />
+                <ScalarProperty Name="CDDecidedByName" ColumnName="CDDecidedByName" />
+                <ScalarProperty Name="CDFlag" ColumnName="CDFlag" />
+                <ScalarProperty Name="ConfidentialAddressActiveFlag" ColumnName="ConfidentialAddressActiveFlag" />
+                <ScalarProperty Name="TemporaryAddressEndDateTransformSID" ColumnName="TemporaryAddressEndDateTransformSID" />
+                <ScalarProperty Name="TemporaryAddressEndVistaErrorDate" ColumnName="TemporaryAddressEndVistaErrorDate" />
+                <ScalarProperty Name="TemporaryAddressEndDate" ColumnName="TemporaryAddressEndDate" />
+                <ScalarProperty Name="TemporaryAddressStartDateTransformSID" ColumnName="TemporaryAddressStartDateTransformSID" />
+                <ScalarProperty Name="TemporaryAddressStartVistaErrorDate" ColumnName="TemporaryAddressStartVistaErrorDate" />
+                <ScalarProperty Name="TemporaryAddressStartDate" ColumnName="TemporaryAddressStartDate" />
+                <ScalarProperty Name="TemporaryAddressChangeInstitutionSID" ColumnName="TemporaryAddressChangeInstitutionSID" />
+                <ScalarProperty Name="TemporaryAddressLastEditedDateTimeTransformSID" ColumnName="TemporaryAddressLastEditedDateTimeTransformSID" />
+                <ScalarProperty Name="TemporaryAddressLastEditedVistaErrorDate" ColumnName="TemporaryAddressLastEditedVistaErrorDate" />
+                <ScalarProperty Name="TemporaryAddressLastEditedDateTime" ColumnName="TemporaryAddressLastEditedDateTime" />
+                <ScalarProperty Name="TemporaryAddressActiveFlag" ColumnName="TemporaryAddressActiveFlag" />
+                <ScalarProperty Name="NOKEmergencyContactSameAsFlag" ColumnName="NOKEmergencyContactSameAsFlag" />
+                <ScalarProperty Name="NOKDesigneeSameAsFlag" ColumnName="NOKDesigneeSameAsFlag" />
+                <ScalarProperty Name="NOKRelationshipToPatient" ColumnName="NOKRelationshipToPatient" />
+                <ScalarProperty Name="NOKSecondaryChangeDateTimeTransformSID" ColumnName="NOKSecondaryChangeDateTimeTransformSID" />
+                <ScalarProperty Name="NOKSecondaryChangeVistaErrorDate" ColumnName="NOKSecondaryChangeVistaErrorDate" />
+                <ScalarProperty Name="NOKSecondaryChangeDateTime" ColumnName="NOKSecondaryChangeDateTime" />
+                <ScalarProperty Name="NOKPrimaryChangeDateTimeTransformSID" ColumnName="NOKPrimaryChangeDateTimeTransformSID" />
+                <ScalarProperty Name="NOKPrimaryChangeVistaErrorDate" ColumnName="NOKPrimaryChangeVistaErrorDate" />
+                <ScalarProperty Name="NOKPrimaryChangeDateTime" ColumnName="NOKPrimaryChangeDateTime" />
+                <ScalarProperty Name="AddressChangeStaffSID" ColumnName="AddressChangeStaffSID" />
+                <ScalarProperty Name="AddressChangeInstitutionSID" ColumnName="AddressChangeInstitutionSID" />
+                <ScalarProperty Name="ExcludeFromFacilityDirectoryFlag" ColumnName="ExcludeFromFacilityDirectoryFlag" />
+                <ScalarProperty Name="BadAddressIndicator" ColumnName="BadAddressIndicator" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="DateOfDeathText" ColumnName="DateOfDeathText" />
+                <ScalarProperty Name="DateOfDeath" ColumnName="DateOfDeath" />
+                <ScalarProperty Name="MothersMaidenName" ColumnName="MothersMaidenName" />
+                <ScalarProperty Name="PhoneCellular" ColumnName="PhoneCellular" />
+                <ScalarProperty Name="PhoneWork" ColumnName="PhoneWork" />
+                <ScalarProperty Name="PhoneResidence" ColumnName="PhoneResidence" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CountrySID" ColumnName="CountrySID" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Zip4" ColumnName="Zip4" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StreetAddress3" ColumnName="StreetAddress3" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="ScrSSN" ColumnName="ScrSSN" />
+                <ScalarProperty Name="PatientSSN" ColumnName="PatientSSN" />
+                <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+                <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="Sta3n" ColumnName="Sta3n" />
+                <ScalarProperty Name="PatientIEN" ColumnName="PatientIEN" />
+                <ScalarProperty Name="PatientSID" ColumnName="PatientSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
