@@ -5,7 +5,7 @@
 3.	Add Connection string in UI - complete
 4.	Create Areas in MVC - complete
 	a.	Common - complete
-	b.	User
+	b.	User - complete
 	c.	Admin
 	d.	Security
 5.	Create All Controllers in Respective Areas - in progress
